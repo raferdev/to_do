@@ -6,7 +6,7 @@ import { Tasks } from "./components/Tasks.js";
 import { useState } from "react";
 
 function App() {
-  const [tasks, setTasks] = useState([""])
+  const [tasks, setTasks] = useState(["tucsigatunds"])
   return (
     <div className={styles.app}>
       <Header />
