@@ -1,0 +1,9 @@
+.tasks {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4rem;
+}
+
+.tasks h1 {
+  font-weight: 700;
+}
