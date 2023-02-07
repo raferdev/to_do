@@ -6,8 +6,8 @@ export function EmptyTasks() {
     <div className={styles.bodyDiv}>
       <img src={bookListIcon} alt="book list icon" />
       <div className={styles.textWrapper}>
-        <h1>Você ainda não tem tarefas cadastradas</h1>
-        <p>Crie tarefas e organize seus itens a fazer</p>
+        <h1>{"You don't have tasks yet :("}</h1>
+        <p>Create a new task and organize your things to do</p>
       </div>
     </div>
   );

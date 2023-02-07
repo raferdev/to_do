@@ -41,7 +41,6 @@ export function Task({id, task, finished, setTasks }: TaskProps) {
           name={`checkbox_${task}`}
           id={`checkbox_${task}`}
           type="checkbox"
-          checked={finished}
         />
         <label htmlFor={`checkbox_${task}`}></label>
       </div>

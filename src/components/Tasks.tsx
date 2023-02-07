@@ -7,12 +7,12 @@ export function Tasks({ tasks, setTasks, completes }: TasksProps) {
     <main className={styles.tasks}>
       <header>
         <h2>
-          Tarefas criadas<span> {tasks.length - 1} </span>
+          Created tasks<span>{tasks.length - 1}</span>
         </h2>
         <h3>
-          Concluídas
+          Finished
           <span>
-            {completes} de {tasks.length - 1}{" "}
+            {completes} of {tasks.length - 1}{" "}
           </span>
         </h3>
       </header>
