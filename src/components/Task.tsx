@@ -2,11 +2,11 @@ import { SetStateAction } from "react";
 import styles from "./Task.module.css";
 import { ReactComponent as TrashIcon} from '../assets/trash.svg';
 
-export function Task({ task, finished, setTasks }: TaskProps) {
+export function Task({id, task, finished, setTasks }: TaskProps) {
   function handlerCheckInput() {
     setTasks((state) => {
       return state.map((oldTask) => {
-        if (oldTask.task === task) {
+        if (oldTask.id === id) {
           let newTask = {
             id: oldTask.id,
             task: oldTask.task,
@@ -15,6 +15,16 @@ export function Task({ task, finished, setTasks }: TaskProps) {
           return newTask;
         }
         return oldTask;
+      });
+    });
+  }
+  function handlerDeleteTask() {
+    setTasks((state) => {
+      return state.filter((oldTask) => {
+        if (oldTask.id === id) {
+          return false
+        }
+        return true;
       });
     });
   }
@@ -36,7 +46,7 @@ export function Task({ task, finished, setTasks }: TaskProps) {
         <label htmlFor={`checkbox_${task}`}></label>
       </div>
       <p>{task}</p>
-      <div className={styles.trashWrapper}>
+      <div onClick={handlerDeleteTask} className={styles.trashWrapper}>
         <TrashIcon className={styles.svgTrash}/>
       </div>
     </div>
@@ -49,6 +59,7 @@ interface TaskInput {
 }
 
 interface TaskProps {
+  id:string;
   task: string;
   finished: boolean;
   setTasks: (value: SetStateAction<TaskInput[]>) => void;

@@ -20,7 +20,7 @@ export function Tasks({ tasks, setTasks, completes }: TasksProps) {
         if(task.id === "") {
           return
         }
-        return <Task task={task.task} finished={task.finished} setTasks={setTasks} key={task.task} />;
+        return <Task id={task.id} task={task.task} finished={task.finished} setTasks={setTasks} key={task.task} />;
       })}
     </main>
   );
