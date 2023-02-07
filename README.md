@@ -3,8 +3,6 @@
  <img  height=40px src="./src/assets/logo.png" alt="Project logo"></a>
 </p>
 
-<h3 align="center">To Do</h3>
-
 <p align="center">
 <img src="https://img.shields.io/github/last-commit/raferdev/to_do?style=for-the-badge">
 <img src="https://img.shields.io/github/languages/count/raferdev/to_do?style=for-the-badge">
