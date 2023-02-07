@@ -1,6 +1,7 @@
 import styles from "./TaskInput.module.css";
 import plusSvgIcon from "../assets/plus.svg";
 import { ChangeEvent, SetStateAction, useState } from "react";
+import { v4 } from "uuid";
 
 export function TaskInput({ setTasks }: TaskInputProps) {
 
@@ -29,6 +30,7 @@ export function TaskInput({ setTasks }: TaskInputProps) {
       <button
         className={styles.createButton}
         onMouseDown={() => handleButtonNewTask({
+          id:v4(),
           task,
           finished:false
         })}
@@ -40,6 +42,7 @@ export function TaskInput({ setTasks }: TaskInputProps) {
 }
 
 interface Task {
+  id:string;
   task: string;
   finished: boolean;
 };

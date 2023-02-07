@@ -1,4 +1,4 @@
-import { SetStateAction, useState } from "react";
+import { SetStateAction } from "react";
 import styles from "./Tasks.module.css";
 import { Task } from "./Task.js";
 
@@ -7,16 +7,19 @@ export function Tasks({ tasks, setTasks, completes }: TasksProps) {
     <main className={styles.tasks}>
       <header>
         <h2>
-          Tarefas criadas<span> {tasks.length} </span>
+          Tarefas criadas<span> {tasks.length - 1} </span>
         </h2>
         <h3>
           Concluídas
           <span>
-            {completes} de {tasks.length}{" "}
+            {completes} de {tasks.length - 1}{" "}
           </span>
         </h3>
       </header>
       {tasks.map((task) => {
+        if(task.id === "") {
+          return
+        }
         return <Task task={task.task} finished={task.finished} setTasks={setTasks} key={task.task} />;
       })}
     </main>
@@ -24,6 +27,7 @@ export function Tasks({ tasks, setTasks, completes }: TasksProps) {
 }
 
 interface TaskInput {
+  id: string;
   task: string;
   finished: boolean;
 };

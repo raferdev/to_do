@@ -7,7 +7,9 @@ import { useState } from "react";
 import { EmptyTasks } from "./components/EmptyTasks.js";
 
 function App() {
-  const [tasks, setTasks] = useState([{task:"",finished:false}]);
+  const [tasks, setTasks] = useState([
+    { id: "", task: "", finished: false },
+  ]);
   let completes = 0;
 
   tasks.forEach((task) => {
@@ -20,7 +22,11 @@ function App() {
     <div className={styles.app}>
       <Header />
       <TaskInput setTasks={setTasks} />
-      {tasks.length>1?<Tasks tasks={tasks} setTasks={setTasks} completes={completes} />:<EmptyTasks/>}
+      {tasks.length > 1 ? (
+        <Tasks tasks={tasks} setTasks={setTasks} completes={completes} />
+      ) : (
+        <EmptyTasks />
+      )}
       <div className={styles.body}></div>
     </div>
   );
