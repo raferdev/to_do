@@ -1,6 +1,7 @@
 import { SetStateAction } from "react";
 import styles from "./Task.module.css";
 import trashIcon from "../assets/trash.svg"
+
 export function Task({ task, finished, setTasks }: TaskProps) {
   function handlerCheckInput() {
     setTasks((state) => {
