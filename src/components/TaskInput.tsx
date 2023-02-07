@@ -10,7 +10,7 @@ export function TaskInput({ setTasks }: TaskInputProps) {
     setTask(event.target.value);
   }
 
-  function handleButtonNewTask(task: string) {
+  function handleButtonNewTask(task: Task) {
     setTasks((tasks) => {
       return [...tasks, task];
     });
@@ -28,7 +28,10 @@ export function TaskInput({ setTasks }: TaskInputProps) {
       />
       <button
         className={styles.createButton}
-        onMouseDown={() => handleButtonNewTask(task)}
+        onMouseDown={() => handleButtonNewTask({
+          task,
+          finished:false
+        })}
       >
         Create <img src={plusSvgIcon} />
       </button>
@@ -36,6 +39,11 @@ export function TaskInput({ setTasks }: TaskInputProps) {
   );
 }
 
+interface Task {
+  task: string;
+  finished: boolean;
+};
+
 interface TaskInputProps {
-  setTasks: (value: SetStateAction<string[]>) => void;
-}
+  setTasks: (value: SetStateAction<Task[]>) => void;
+};

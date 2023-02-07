@@ -6,12 +6,20 @@ import { Tasks } from "./components/Tasks.js";
 import { useState } from "react";
 
 function App() {
-  const [tasks, setTasks] = useState(["tucsigatunds"])
+  const [tasks, setTasks] = useState([{task:"tucsigatunds", finished:false}]);
+  let completes = 0;
+
+  tasks.forEach(task=>{
+    if(task.finished) {
+      completes++
+    };
+
+  })
   return (
     <div className={styles.app}>
       <Header />
       <TaskInput setTasks={setTasks}/>
-      <Tasks tasks={tasks}/>
+      <Tasks tasks={tasks} setTasks={setTasks} completes={completes}/>
       <div className={styles.body}></div>
     </div>
   );

@@ -1,0 +1,94 @@
+.taskUnchecked {
+  width: 41rem;
+  height: 4.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 16px;
+  gap: 12px;
+  background: var(--gray-500);
+  border: 1px solid var(--gray-400);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  color: var(--gray-100);
+}
+
+.taskUnchecked + .taskUnchecked,
+.taskChecked + .taskChecked,
+.taskChecked + .taskUnchecked,
+.taskUnchecked + .taskChecked {
+  margin-top: 12px;
+}
+
+.taskChecked {
+  width: 41rem;
+  height: 4.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 16px;
+  gap: 12px;
+  background: var(--gray-500);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  color: var(--gray-100);
+}
+
+.taskChecked p {
+  text-decoration: line-through;
+  color: var(--gray-300);
+}
+
+.taskChecked + .taskChecked {
+  margin-top: 12px;
+}
+
+.inputChecked {
+  display: none;
+}
+
+.inputUncheked {
+  display: none;
+}
+
+.inputUncheked + label {
+  display: block;
+  width: 1.15rem;
+  height: 1.15rem;
+  border: 2px solid var(--blue-basic);
+  border-radius: 50%;
+}
+.inputUncheked + label:hover {
+  display: block;
+  width: 1.15rem;
+  height: 1.15rem;
+  border: 2px solid var(--blue-basic);
+  border-radius: 50%;
+  background-color: var(--blue-dark);
+}
+
+.inputChecked + label::before {
+  display: block;
+  line-height: 1rem;
+  text-align: center;
+  content: "L";
+  text-decoration: none;
+  font-size: 0.7rem;
+  transform: scaleX(-1) rotate(-45deg);
+}
+.inputChecked + label {
+  display: block;
+  width: 1.15rem;
+  text-decoration: none;
+  height: 1.15rem;
+  border-radius: 50%;
+  background-color: var(--purple-dark);
+}
+.inputChecked + label:hover {
+  display: block;
+  width: 1.15rem;
+  height: 1.15rem;
+  border-radius: 50%;
+  text-decoration: none;
+  background-color: var(--purple-basic);
+}
