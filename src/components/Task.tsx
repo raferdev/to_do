@@ -1,6 +1,6 @@
 import { SetStateAction } from "react";
 import styles from "./Task.module.css";
-import trashIcon from "../assets/trash.svg"
+import { ReactComponent as TrashIcon} from '../assets/trash.svg';
 
 export function Task({ task, finished, setTasks }: TaskProps) {
   function handlerCheckInput() {
@@ -37,7 +37,7 @@ export function Task({ task, finished, setTasks }: TaskProps) {
       </div>
       <p>{task}</p>
       <div className={styles.trashWrapper}>
-        <img src={trashIcon}/>
+        <TrashIcon className={styles.svgTrash}/>
       </div>
     </div>
   );
