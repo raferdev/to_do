@@ -8,6 +8,10 @@ input {
   border: 1px solid var(--gray-700);
 }
 
+input:focus {
+  color: var(--gray-100);
+}
+
 .inputWrap {
   display: flex;
   gap: 8px;
